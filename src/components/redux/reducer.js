@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action) => {
-    console.log(action);
+    // console.log(action);
 
     switch (action.type) {
         case ADD_CONTACT:
@@ -21,7 +21,7 @@ const rootReducer = (state = initialState, action) => {
             const resultContact = state.contacts.filter(item=>item.id!==action.payload);
             return { ...state, contacts: resultContact };
         case SET_FILTER:
-            return { ...state, filter: action.filter };
+            return { ...state, filter: action.payload };
         default:
         return state;
     };

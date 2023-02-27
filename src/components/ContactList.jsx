@@ -2,25 +2,21 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import { deleteContact } from "./redux/action";
-import { getContacts, getFilter } from "./redux/selectors";
+import { getFilteredContacts } from "./redux/selectors";
 
 
 const ContactList = () => {
-    const contactsStore = useSelector(getContacts);
-    const filterStore = useSelector(getFilter);
+    const filterdContacts = useSelector(getFilteredContacts);
     const dispatch = useDispatch();
-
-    const normalizeFilter = filterStore.toLowerCase().trim();
-    const visiblePersons = contactsStore.filter(cont => cont.name.toLowerCase().includes(normalizeFilter));
 
     const onClickTakeId = (id) => {
         dispatch(deleteContact(id));
     };
 
-    // console.log(contactsRedux);
+    console.log(filterdContacts);
     return (
         <ul>
-            {visiblePersons.map(cont => (
+            {filterdContacts.map(cont => (
                 <li key={cont.id}>
                     <span>{cont.name}:</span>
                     <span>{cont.number}</span>
