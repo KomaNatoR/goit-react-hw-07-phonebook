@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from "react-redux";
 
-import { deleteContact } from "./redux/action";
+import { deleteContact } from "./redux/contacts/contacts-actions";
 import { getFilteredContacts } from "./redux/selectors";
 
 
@@ -13,7 +13,7 @@ const ContactList = () => {
         dispatch(deleteContact(id));
     };
 
-    console.log(filterdContacts);
+    // console.log(filterdContacts);
     return (
         <ul>
             {filterdContacts.map(cont => (

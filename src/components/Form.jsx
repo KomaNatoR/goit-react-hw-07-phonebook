@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addContact } from './redux/action';
+import { addContact } from './redux/contacts/contacts-actions';
 import { getContacts } from './redux/selectors';
 // import PropTypes from 'prop-types';
 
@@ -25,6 +25,7 @@ const FormikForm = () => {
         const contactsFind = contacts.find(item => item.name === person.name);
         if (contactsFind) return alert("Це хіба можна так робити?");
         
+        // console.log(person);
         dispatch(addContact(person));
         actions.resetForm();
     };
