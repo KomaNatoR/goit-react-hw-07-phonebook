@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addContact } from './redux/contacts/contacts-actions';
+// import { addContact } from './redux/contacts/contacts-actions';
+import { addContact } from './redux/contacts/contacts-operations';
 import { getContacts } from './redux/selectors';
 // import PropTypes from 'prop-types';
 
